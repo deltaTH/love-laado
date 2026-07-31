@@ -20,7 +20,10 @@
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
         }
+        
+        /* Photo Section */
         .photo-placeholder {
             width: 100%;
             max-width: 500px;
@@ -38,7 +41,6 @@
             overflow: hidden;
             position: relative;
         }
-        /* Replace 'your-photo-here.jpg' with your actual image file name */
         .photo-placeholder img {
             width: 100%;
             height: 100%;
@@ -47,6 +49,8 @@
             top: 0;
             left: 0;
         }
+
+        /* Typography */
         h1 {
             color: #d6336c;
             font-size: 2.5rem;
@@ -57,6 +61,8 @@
             font-weight: normal;
             font-size: 1.2rem;
         }
+
+        /* Emojis */
         .emoji-bar {
             font-size: 2.5rem;
             margin: 20px 0;
@@ -68,6 +74,8 @@
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
+
+        /* Text Boxes */
         .message-box {
             text-align: left;
             background: #fff0f3;
@@ -78,9 +86,8 @@
             line-height: 1.8;
             font-size: 1.1rem;
         }
-        .message-box p {
-            margin-bottom: 15px;
-        }
+        .message-box p { margin-bottom: 15px; }
+        
         .promise-section {
             background-color: #ffdeeb;
             padding: 20px;
@@ -91,6 +98,8 @@
             color: #a61e4d;
             margin-top: 0;
         }
+
+        /* Main Button */
         .btn {
             background-color: #d6336c;
             color: white;
@@ -107,6 +116,63 @@
             background-color: #a61e4d;
             transform: scale(1.05);
         }
+
+        /* --- NEW: Beautiful Pop-up Modal CSS (No Alerts) --- */
+        .modal-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(3px);
+        }
+        .heart-popup {
+            background: #ffe6ea;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 400px;
+            width: 80%;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 5px solid #d6336c;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        .heart-popup h2 {
+            color: #d6336c;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .heart-icon {
+            font-size: 5rem;
+            margin: -20px 0 10px 0;
+            animation: heartbeat 1.5s infinite;
+        }
+        .close-btn {
+            margin-top: 20px;
+            background: #f06595;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        /* Animations for the pop-up */
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.2); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.2); }
+            60% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
@@ -115,7 +181,7 @@
         
         <!-- PHOTO SECTION -->
         <div class="photo-placeholder">
-            <!-- Put your image name in the src attribute below -->
+            <!-- Replace your-photo-here.jpg with your direct photo link -->
             <img src="your-photo-here.jpg" alt="Upload a picture of us here!" onerror="this.style.display='none'">
             <span>[ Upload Our Favorite Memory Here ]</span>
         </div>
@@ -123,7 +189,7 @@
         <h1>I Am So, So Sorry.</h1>
         <h2>To the love of my life...</h2>
 
-        <!-- EMOJI BAR -->
+        <!-- EMOJI BAR 1 -->
         <div class="emoji-bar">
             ❤️ 🧸 🐟 🐊 🥺 🐡 🦦 🐧
         </div>
@@ -137,7 +203,7 @@
             <p>When you were sharing your feelings, I made the mistake of trying to throw solutions at you instead of just holding your hand and listening to what you actually had to say. You didn't need me to fix things; you just needed me to hear you, understand you, and be your partner. I failed at that, and I deeply regret it.</p>
         </div>
 
-        <!-- SECOND EMOJI BAR -->
+        <!-- EMOJI BAR 2 (Includes Crocodile/Magarmach and Fish/Machli!) -->
         <div class="emoji-bar" style="font-size: 2rem;">
             🐠 🐢 🥺 ❤️ 🐊 🐳 🦦 🧸
         </div>
@@ -149,11 +215,31 @@
             <p>Please give me one last chance to prove that I can be the partner you deserve.</p>
         </div>
 
-        <button class="btn" onclick="alert('Thank you for giving me another chance. I love you more than words can say! ❤️')">
+        <!-- NEW BUTTON (Triggers the on-page pop-up instead of an alert) -->
+        <button class="btn" onclick="showHeartMessage()">
             I Forgive You
         </button>
 
     </div>
+
+    <!-- NEW ON-PAGE POP-UP MODAL (Hidden until button is clicked) -->
+    <div class="modal-overlay" id="successModal">
+        <div class="heart-popup">
+            <div class="heart-icon">❤️</div>
+            <h2>Thank you for loving me and forgiving me.</h2>
+            <button class="close-btn" onclick="hideHeartMessage()">Close</button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR THE POP-UP -->
+    <script>
+        function showHeartMessage() {
+            document.getElementById('successModal').style.display = 'flex';
+        }
+        function hideHeartMessage() {
+            document.getElementById('successModal').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
