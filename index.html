@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Am So Sorry ❤️</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffe6ea;
+            color: #4a4a4a;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .photo-placeholder {
+            width: 100%;
+            max-width: 500px;
+            height: 350px;
+            background-color: #ffd1dc;
+            border: 4px dashed #ff9aae;
+            border-radius: 15px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d65a78;
+            font-size: 1.2rem;
+            font-weight: bold;
+            overflow: hidden;
+            position: relative;
+        }
+        /* Replace 'your-photo-here.jpg' with your actual image file name */
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        h1 {
+            color: #d6336c;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #f06595;
+            font-weight: normal;
+            font-size: 1.2rem;
+        }
+        .emoji-bar {
+            font-size: 2.5rem;
+            margin: 20px 0;
+            letter-spacing: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .message-box {
+            text-align: left;
+            background: #fff0f3;
+            padding: 30px;
+            border-left: 6px solid #d6336c;
+            border-radius: 8px;
+            margin: 30px 0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        .message-box p {
+            margin-bottom: 15px;
+        }
+        .promise-section {
+            background-color: #ffdeeb;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        .promise-section h3 {
+            color: #a61e4d;
+            margin-top: 0;
+        }
+        .btn {
+            background-color: #d6336c;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(214, 51, 108, 0.4);
+        }
+        .btn:hover {
+            background-color: #a61e4d;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- PHOTO SECTION -->
+        <div class="photo-placeholder">
+            <!-- Put your image name in the src attribute below -->
+            <img src="your-photo-here.jpg" alt="Upload a picture of us here!" onerror="this.style.display='none'">
+            <span>[ Upload Our Favorite Memory Here ]</span>
+        </div>
+
+        <h1>I Am So, So Sorry.</h1>
+        <h2>To the love of my life...</h2>
+
+        <!-- EMOJI BAR -->
+        <div class="emoji-bar">
+            ❤️ 🧸 🐟 🐊 🥺 🐡 🦦 🐧
+        </div>
+
+        <!-- APOLOGY MESSAGE -->
+        <div class="message-box">
+            <p>Looking at that photo of us reminds me of how incredibly lucky I am to have you—and how foolish I was to let my temper get in the way of our happiness.</p>
+            
+            <p>I know I messed up, and I want to apologize from the bottom of my heart. I am so sorry for shouting at you. You never deserve to be spoken to that way. I am also sorry for not listening to you properly.</p>
+
+            <p>When you were sharing your feelings, I made the mistake of trying to throw solutions at you instead of just holding your hand and listening to what you actually had to say. You didn't need me to fix things; you just needed me to hear you, understand you, and be your partner. I failed at that, and I deeply regret it.</p>
+        </div>
+
+        <!-- SECOND EMOJI BAR -->
+        <div class="emoji-bar" style="font-size: 2rem;">
+            🐠 🐢 🥺 ❤️ 🐊 🐳 🦦 🧸
+        </div>
+
+        <!-- THE PROMISE -->
+        <div class="promise-section">
+            <h3>My Promise to You</h3>
+            <p>I am learning from this, and I promise you that I will not repeat this mistake again. Going forward, I will be all ears. No more shouting, no more interrupting, and no more unsolicited solutions—just me, listening to the person I love most.</p>
+            <p>Please give me one last chance to prove that I can be the partner you deserve.</p>
+        </div>
+
+        <button class="btn" onclick="alert('Thank you for giving me another chance. I love you more than words can say! ❤️')">
+            I Forgive You
+        </button>
+
+    </div>
+
+</body>
+</html>
