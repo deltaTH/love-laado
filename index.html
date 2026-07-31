@@ -4,68 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I Am So Sorry ❤️</title>
+    
+    <!-- Beautiful Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffe6ea;
+            font-family: 'Quicksand', sans-serif;
+            /* Animated Romantic Gradient Background */
+            background: linear-gradient(-45deg, #ff9a9e, #fecfef, #fbc2eb, #a18cd1);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: #4a4a4a;
             text-align: center;
-            padding: 20px;
+            padding: 40px 15px;
             margin: 0;
+            min-height: 100vh;
         }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism Card Effect */
         .container {
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 50px 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             position: relative;
         }
         
-        /* Photo Section */
+        /* Polaroid Photo Section */
         .photo-placeholder {
-            width: 100%;
-            max-width: 500px;
-            height: 350px;
-            background-color: #ffd1dc;
-            border: 4px dashed #ff9aae;
-            border-radius: 15px;
-            margin: 0 auto 30px;
+            width: 90%;
+            max-width: 450px;
+            height: 380px;
+            background-color: #fff;
+            padding: 15px 15px 60px 15px; /* Extra bottom padding for polaroid look */
+            border-radius: 8px;
+            margin: 0 auto 35px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.05);
+            transform: rotate(-2deg);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #d65a78;
-            font-size: 1.2rem;
-            font-weight: bold;
-            overflow: hidden;
-            position: relative;
+            color: #ff9aae;
+            font-weight: 600;
         }
+        
+        .photo-placeholder:hover {
+            transform: rotate(1deg) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
         .photo-placeholder img {
-            width: 100%;
-            height: 100%;
+            width: calc(100% - 30px);
+            height: calc(100% - 75px);
             object-fit: cover;
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 15px;
+            left: 15px;
+            border-radius: 4px;
+        }
+
+        .polaroid-text {
+            position: absolute;
+            bottom: 12px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #d6336c;
         }
 
         /* Typography */
         h1 {
+            font-family: 'Dancing Script', cursive;
             color: #d6336c;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3.8rem;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(214, 51, 108, 0.2);
         }
         h2 {
+            font-family: 'Dancing Script', cursive;
             color: #f06595;
             font-weight: normal;
-            font-size: 1.2rem;
+            font-size: 2rem;
+            margin-top: 0;
         }
 
         /* Emojis */
         .emoji-bar {
             font-size: 2.5rem;
-            margin: 20px 0;
+            margin: 25px 0;
             letter-spacing: 15px;
             animation: float 3s ease-in-out infinite;
         }
@@ -78,71 +116,79 @@
         /* Text Boxes */
         .message-box {
             text-align: left;
-            background: #fff0f3;
-            padding: 30px;
-            border-left: 6px solid #d6336c;
-            border-radius: 8px;
+            background: rgba(255, 240, 243, 0.7);
+            padding: 35px;
+            border-left: 6px solid #ff758c;
+            border-radius: 12px;
             margin: 30px 0;
             line-height: 1.8;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            color: #555;
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.08);
         }
         .message-box p { margin-bottom: 15px; }
         
         .promise-section {
-            background-color: #ffdeeb;
-            padding: 20px;
+            background-color: rgba(255, 222, 235, 0.7);
+            padding: 25px;
             border-radius: 12px;
             margin-top: 30px;
+            border: 1px dashed #ff9aae;
         }
         .promise-section h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
             color: #a61e4d;
             margin-top: 0;
+            margin-bottom: 10px;
         }
 
-        /* Main Button */
+        /* Gradient Glowing Button */
         .btn {
-            background-color: #d6336c;
+            background: linear-gradient(45deg, #ff758c 0%, #ff7eb3 100%);
             color: white;
             border: none;
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            border-radius: 30px;
+            padding: 16px 50px;
+            font-size: 1.3rem;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            border-radius: 50px;
             cursor: pointer;
-            transition: 0.3s;
-            margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(214, 51, 108, 0.4);
+            transition: all 0.4s ease;
+            margin-top: 30px;
+            box-shadow: 0 10px 20px rgba(255, 117, 140, 0.4);
         }
         .btn:hover {
-            background-color: #a61e4d;
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(255, 117, 140, 0.6);
         }
 
-        /* --- NEW: Beautiful Pop-up Modal CSS (No Alerts) --- */
+        /* Beautiful Pop-up Modal CSS */
         .modal-overlay {
-            display: none; /* Hidden by default */
+            display: none; 
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1000;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(3px);
+            backdrop-filter: blur(8px);
         }
         .heart-popup {
-            background: #ffe6ea;
+            background: rgba(255, 255, 255, 0.95);
             padding: 40px;
             border-radius: 30px;
             text-align: center;
             max-width: 400px;
-            width: 80%;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            border: 5px solid #d6336c;
+            width: 85%;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            border: 3px solid #ff7eb3;
             animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
         .heart-popup h2 {
+            font-family: 'Dancing Script', cursive;
             color: #d6336c;
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-size: 2.5rem;
             margin: 10px 0;
         }
         .heart-icon {
@@ -155,13 +201,18 @@
             background: #f06595;
             color: white;
             border: none;
-            padding: 10px 25px;
+            padding: 10px 30px;
             border-radius: 20px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .close-btn:hover {
+            background: #d6336c;
         }
         
-        /* Animations for the pop-up */
         @keyframes popIn {
             0% { transform: scale(0.5); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
@@ -179,11 +230,11 @@
 
     <div class="container">
         
-        <!-- PHOTO SECTION -->
+        <!-- POLAROID PHOTO SECTION -->
         <div class="photo-placeholder">
-            <!-- Replace your-photo-here.jpg with your direct photo link -->
+            <!-- Ensure your image link goes in the src below! -->
             <img src="your-photo-here.jpg" alt="Upload a picture of us here!" onerror="this.style.display='none'">
-            <span>[ Upload Our Favorite Memory Here ]</span>
+            <span class="polaroid-text">Our Favorite Memory ❤️</span>
         </div>
 
         <h1>I Am So, So Sorry.</h1>
@@ -215,14 +266,14 @@
             <p>Please give me one last chance to prove that I can be the partner you deserve.</p>
         </div>
 
-        <!-- NEW BUTTON (Triggers the on-page pop-up instead of an alert) -->
+        <!-- GLOWING GRADIENT BUTTON -->
         <button class="btn" onclick="showHeartMessage()">
             I Forgive You
         </button>
 
     </div>
 
-    <!-- NEW ON-PAGE POP-UP MODAL (Hidden until button is clicked) -->
+    <!-- ON-PAGE POP-UP MODAL -->
     <div class="modal-overlay" id="successModal">
         <div class="heart-popup">
             <div class="heart-icon">❤️</div>
